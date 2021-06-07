@@ -1,11 +1,31 @@
-### Java Spring template project
+# Remote Technical Test By Sukhvinder Legha
 
-This project is based on a GitLab [Project Template](https://docs.gitlab.com/ee/gitlab-basics/create-project.html).
+This is a Java 11, Spring Boot 2 Application with REST API calls. 
 
-Improvements can be proposed in the [original project](https://gitlab.com/gitlab-org/project-templates/spring).
+The database used is PostgreSQL.
 
-### CI/CD with Auto DevOps
+The schema and data for the database tables are saved in the resources folder.
+By using excel, I generated insert statements for all the data for test_accounts.
 
-This template is compatible with [Auto DevOps](https://docs.gitlab.com/ee/topics/autodevops/).
+In this application, we have the following API calls: 
+- POST Mapping: updateValidAccountsTable (http://localhost:8080/v1/api/meter-reading-uploads)
+    This posts the valid accounts data to a new table called valid_accounts.
+    The logging will also show the number of valid accounts, the number of accounts before the validation and the number of valid accounts including duplicates.
 
-If Auto DevOps is not already enabled for this project, you can [turn it on](https://docs.gitlab.com/ee/topics/autodevops/#enabling-auto-devops) in the project settings.
+- GET Mapping: getAllAccounts, getAllAccountIds, getAllValidAccountsWithoutDuplicates
+    These were mainly used to access data, but I've listed the urls for them below anyway.
+    http://localhost:8080/v1/api/getAllAccounts
+    http://localhost:8080/v1/api/getAllAccountIds
+    http://localhost:8080/v1/api/getValidAccountsCountWithoutDuplicates
+    
+    
+## Database connectivity
+Set your local database up using the credentials in the application.properties file.
+I used docker on my system.
+
+## Testing Data
+I used Postman to access the endpoints.
+
+Thank you
+
+
